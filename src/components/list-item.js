@@ -2,23 +2,29 @@ import { useState } from 'react';
 
 import classes from './list-item.module.scss';
 
-function ListItem({ item }) {
-    const [isChecked, setIsChecked] = useState(false);
+function ListItem({ item, deleteListItem, handleCheckboxChange, handleTitleChange }) {
+    const [changingTitle, setChangingTitle] = useState(false);
 
-    const handleCheckboxChange = () => {
-        setIsChecked(!isChecked);
+    const handleKeyPress = (event) => {
+        if (event.key === "Enter") {
+            handleChangingTitle();
+        }
     };
+
+    const handleChangingTitle = () => {
+        setChangingTitle(!changingTitle);
+    }
 
     return (
         <div className={classes.listItem}>
             <div className={classes.listItemCheckboxWrapper}>
-                <p className={classes.listItemCheckbox} onClick={handleCheckboxChange}>{isChecked ? "✓" : " "}</p>
+                <p className={classes.listItemCheckbox} onClick={() => handleCheckboxChange(item.id)}>{item.isChecked ? "✓" : ""}</p>
             </div>
 
-            <p className={classes.listItemTitle}>{item}</p>
+            {changingTitle ? <input className={`${classes.listItemTitle} ${classes.listItemTitleInput}`} value={item.title} onChange={(e) => handleTitleChange(item.id, e.target.value)} onBlur={handleChangingTitle} onKeyDown={handleKeyPress} autoFocus /> : <p className={classes.listItemTitle} onClick={handleChangingTitle}>{item.title}</p>}
 
             <div className={classes.listItemDeleteWrapper}>
-                <p className={classes.listItemDelete}>X</p>
+                <p className={classes.listItemDelete} onClick={() => deleteListItem(item.id)}>X</p>
             </div>
         </div>
     );
