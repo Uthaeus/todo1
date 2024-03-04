@@ -11,9 +11,15 @@ function ListItem({ item }) {
 
     return (
         <div className={classes.listItem}>
-            <p>check</p>
+            <div className={classes.listItemCheckboxWrapper}>
+                <p className={classes.listItemCheckbox} onClick={handleCheckboxChange}>{isChecked ? "✓" : " "}</p>
+            </div>
+
             <p className={classes.listItemTitle}>{item}</p>
-            <p className={classes.listItemDelete}>X</p>
+
+            <div className={classes.listItemDeleteWrapper}>
+                <p className={classes.listItemDelete}>X</p>
+            </div>
         </div>
     );
 }

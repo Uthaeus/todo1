@@ -6,9 +6,37 @@
     margin-bottom: 0.5rem;
     border-bottom: 1px solid rgb(38, 92, 38);
 
+    .listItemCheckboxWrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .listItemCheckbox {
+            background-color: rgb(38, 92, 38);
+            color: black;
+            border-radius: 5px;
+            font-size: 1.5rem;
+            text-align: center;
+        }
+    }
+
     .listItemTitle {
         font-size: 2.5rem;
         font-weight: 600;
         color: rgb(38, 92, 38);
+    }
+
+    .listItemDeleteWrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .listItemDelete {
+            background-color: rgba(92, 38, 38, 0.322);
+            color: red;
+            border-radius: 5px;
+            font-size: 1.5rem;
+            text-align: center;
+        }
     }
 }
