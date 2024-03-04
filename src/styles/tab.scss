@@ -1,0 +1,30 @@
+
+.tab-item {
+    width: 200px;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 30px;
+    cursor: pointer;
+    border-top: 1px solid grey;
+    border-left: 1px solid grey;
+    border-right: 1px solid grey;
+    border-radius: 10px 10px 0 0;
+    opacity: 0.5;
+    transition: transform 0.3s ease-in-out;
+
+    &:hover {
+        transform: scale(1.04);
+    }
+
+    .tab-item-title {
+        font-size: 2rem;
+        font-weight: 600;
+        color: rgb(38, 92, 38);
+    }
+}
+
+.tab-item-active {
+    opacity: 1;
+}

@@ -1,5 +1,8 @@
 @import 'bootstrap';
 
+@import './styles/tab.scss';
+@import './styles/list.scss';
+
 body {
   margin: 0;
   padding: 0;
@@ -10,4 +13,24 @@ body {
 
 .App {
   min-height: 100vh;
+
+  .app-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 8rem;
+    height: 150px;
+    margin-bottom: 1rem;
+  }
+
+  .app-body {
+    display: flex;
+    flex-direction: column;
+
+    .list-select-wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
 }

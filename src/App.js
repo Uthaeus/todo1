@@ -1,5 +1,7 @@
 import { useState } from "react";
 
+import TabItem from "./components/tab-item";
+
 import SimpleList from "./components/simple-list/simple-list";
 import ExtendedList from "./components/extended-list/extended-list";
 
@@ -16,14 +18,14 @@ function App() {
         <h1 className="app-title">ToDo App</h1>
 
         <div className="app-header-actions">
-
+          <p>Log In</p>
         </div>
       </div>
 
       <div className="app-body">
         <div className="list-select-wrapper">
-          <button onClick={() => handleListTypeChange("simple")} className="list-select-btn">Simple</button>
-          <button onClick={() => handleListTypeChange("extended")} className="list-select-btn">Extended</button>
+          <TabItem title="Simple" active={listType === "simple"} onClick={() => handleListTypeChange("simple")} />
+          <TabItem title="Extended" active={listType === "extended"} onClick={() => handleListTypeChange("extended")} />
         </div>
         
         <div className="app-list-wrapper">

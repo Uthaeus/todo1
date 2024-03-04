@@ -2,8 +2,11 @@
 function ExtendedList() {
 
     return (
-        <div className="list-container">
-            <h1>Extended List</h1>
+        <div className="list">
+            <div className="list-header">
+                <h1 className="list-title">Extended List</h1>
+                <button>Add</button>
+            </div>
         </div>
     );
 }
