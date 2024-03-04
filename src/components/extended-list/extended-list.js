@@ -2,7 +2,7 @@
 function ExtendedList() {
 
     return (
-        <div>
+        <div className="list-container">
             <h1>Extended List</h1>
         </div>
     );

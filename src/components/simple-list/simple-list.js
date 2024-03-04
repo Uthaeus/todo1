@@ -2,7 +2,7 @@
 function SimpleList() {
 
     return (
-        <div>
+        <div className="list-container">
             <h1>Simple List</h1>
         </div>
     );

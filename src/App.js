@@ -26,7 +26,7 @@ function App() {
           <button onClick={() => handleListTypeChange("extended")} className="list-select-btn">Extended</button>
         </div>
         
-        <div className="list-wrapper">
+        <div className="app-list-wrapper">
           {listType === "simple" && <SimpleList />}
           {listType === "extended" && <ExtendedList />}
         </div>
